@@ -1,0 +1,50 @@
+# ============================================================
+# Agentic RAG with Real-Time Tools – Python Dependencies
+# Python 3.11+  |  All packages are FREE / no paid tiers
+# ============================================================
+
+# ── Web framework ────────────────────────────────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9       # for UploadFile / multipart
+
+# ── LLM (Groq Cloud – free tier) ─────────────────────────────
+groq>=0.9.0
+
+# ── Embeddings (local, no API key) ───────────────────────────
+sentence-transformers>=3.0.0
+torch>=2.2.0                  # sentence-transformers backend
+peft>=0.21.0                  # compatibility with transformers 5+ in shared envs
+
+# ── Vector store ─────────────────────────────────────────────
+chromadb>=0.5.0
+
+# ── PDF parsing ──────────────────────────────────────────────
+pypdf>=4.2.0
+
+# ── Web search & reading (no key) ────────────────────────────
+duckduckgo-search>=6.1.0
+trafilatura>=1.12.0           # web page text extraction for read_url
+lxml_html_clean>=0.4.0        # required by trafilatura on recent lxml
+feedparser>=6.0.11            # Google News RSS parser
+youtube-transcript-api>=0.6.2 # YouTube transcripts without API key
+
+# ── Finance & Live Data (no key) ─────────────────────────────
+yfinance>=0.2.40
+
+# ── Data analysis & DuckDB (no key) ──────────────────────────
+duckdb>=1.0.0
+pandas>=2.2.0
+openpyxl>=3.1.0               # for xlsx support in analyze_data
+
+# ── HTTP client & caching ────────────────────────────────────
+httpx>=0.27.0
+cachetools>=5.3.0
+
+# ── Config ───────────────────────────────────────────────────
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+python-dotenv>=1.0.0
+
+# ── Utilities ────────────────────────────────────────────────
+numpy>=1.26.0                 # required by sentence-transformers + chromadb

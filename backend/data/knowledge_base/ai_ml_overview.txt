@@ -1,0 +1,116 @@
+Introduction to Artificial Intelligence and Machine Learning
+============================================================
+
+Chapter 1: What is Artificial Intelligence?
+
+Artificial Intelligence (AI) refers to the simulation of human intelligence processes
+by computer systems. These processes include learning (the acquisition of information
+and rules for using it), reasoning (using rules to reach approximate or definite
+conclusions), and self-correction.
+
+Key branches of AI include:
+- Machine Learning (ML): Systems that learn from data without being explicitly programmed.
+- Natural Language Processing (NLP): Enabling computers to understand and generate human language.
+- Computer Vision: Teaching machines to interpret and understand visual information.
+- Robotics: The design and creation of robots that can perform tasks autonomously.
+
+Chapter 2: Machine Learning Fundamentals
+
+Machine Learning is a subset of AI that enables systems to learn and improve from
+experience automatically. The main types of machine learning are:
+
+1. Supervised Learning
+   - The algorithm learns from labeled training data.
+   - Examples: Linear regression, decision trees, neural networks.
+   - Use cases: Email spam detection, image classification, price prediction.
+
+2. Unsupervised Learning
+   - The algorithm finds patterns in unlabeled data.
+   - Examples: K-means clustering, principal component analysis (PCA).
+   - Use cases: Customer segmentation, anomaly detection, data compression.
+
+3. Reinforcement Learning
+   - An agent learns to make decisions by receiving rewards or penalties.
+   - Examples: Q-learning, policy gradient methods.
+   - Use cases: Game playing (AlphaGo), robotics, autonomous driving.
+
+Chapter 3: Neural Networks and Deep Learning
+
+Neural networks are computing systems inspired by the biological neural networks
+of the human brain. They consist of layers of interconnected nodes (neurons).
+
+Deep Learning uses neural networks with many layers (deep networks) to:
+- Recognize speech and images with superhuman accuracy
+- Translate languages in real-time
+- Generate realistic text, images, and audio (generative AI)
+- Power large language models (LLMs) like GPT, Claude, and Gemini
+
+Key architectures:
+- Convolutional Neural Networks (CNNs): Excellent for image processing.
+- Recurrent Neural Networks (RNNs): Designed for sequential data like text and speech.
+- Transformers: The backbone of modern LLMs, using attention mechanisms.
+
+Chapter 4: Retrieval-Augmented Generation (RAG)
+
+RAG is a technique that combines a retrieval system with a generative language model.
+Instead of relying solely on the LLM's training data, RAG:
+
+1. Takes a user query
+2. Searches a vector database for relevant document chunks
+3. Injects the retrieved context into the LLM prompt
+4. Generates an answer grounded in the retrieved documents
+
+Benefits of RAG:
+- Reduces hallucinations (the model makes up facts)
+- Keeps information up-to-date without retraining the model
+- Provides citations and source references
+- Works with private, proprietary, or domain-specific data
+
+The typical RAG pipeline:
+1. Document Ingestion: Load PDFs, TXTs, web pages
+2. Chunking: Split documents into overlapping chunks (~500 tokens)
+3. Embedding: Convert chunks to vector representations using an embedding model
+4. Storage: Store embeddings in a vector database (ChromaDB, Pinecone, Weaviate)
+5. Retrieval: On query, find top-k similar chunks using cosine similarity
+6. Generation: Feed retrieved chunks + query to LLM for final answer
+
+Chapter 5: Agentic AI
+
+Agentic AI systems go beyond single-turn question-answering. An AI agent:
+- Perceives its environment through tools and sensors
+- Plans a sequence of actions to achieve a goal
+- Executes actions using tools (web search, APIs, code execution)
+- Reflects on results and adjusts its plan
+- Iterates until the goal is achieved or a limit is reached
+
+Tool types commonly given to agents:
+- Search tools: Web search, knowledge base retrieval
+- Data tools: Database queries, spreadsheet operations
+- API tools: Weather APIs, financial APIs, REST services
+- Code tools: Python interpreter, SQL executor
+- Communication tools: Email, calendar, messaging
+
+The ReAct (Reasoning + Acting) pattern is widely used: the agent alternates
+between reasoning about the current state and taking an action, building a
+chain of thought that leads to the final answer.
+
+Chapter 6: Vector Databases
+
+Vector databases are specialized systems designed to store and query high-dimensional
+vector embeddings efficiently. Key concepts:
+
+- Embedding: A numerical representation (vector) of text, image, or audio.
+- Cosine similarity: Measures the angle between two vectors (closer = more similar).
+- Approximate Nearest Neighbor (ANN) search: Fast similarity search at scale.
+- HNSW (Hierarchical Navigable Small World): A popular ANN algorithm used by ChromaDB.
+
+Popular vector databases:
+- ChromaDB: Open-source, runs locally, great for development.
+- Pinecone: Managed cloud service, highly scalable.
+- Weaviate: Open-source, supports multi-modal data.
+- pgvector: PostgreSQL extension for vector operations.
+
+Embedding models:
+- all-MiniLM-L6-v2: Lightweight, 384-dimensional, fast inference, free.
+- text-embedding-ada-002: OpenAI's embedding model (paid API).
+- BGE-M3: High-quality multilingual embeddings (free, open-source).

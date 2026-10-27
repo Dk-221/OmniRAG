@@ -1,0 +1,121 @@
+Stock Market Investing: A Comprehensive Guide for Beginners
+===========================================================
+
+Section 1: Understanding the Stock Market
+
+The stock market is a marketplace where buyers and sellers trade shares of publicly
+listed companies. Key concepts:
+
+- Stock/Share: A unit of ownership in a company.
+- Exchange: A regulated marketplace (NYSE, NASDAQ, BSE, NSE) where stocks are traded.
+- Bull Market: A period of rising stock prices (typically >20% gain from recent low).
+- Bear Market: A period of falling stock prices (typically >20% decline from recent high).
+- Market Capitalization: Total market value of a company = Share Price × Shares Outstanding.
+
+Major US Stock Exchanges:
+- NYSE (New York Stock Exchange): Oldest and largest, lists blue-chip companies.
+- NASDAQ: Technology-focused exchange. Home to Apple, Microsoft, Google, Amazon.
+- S&P 500: Index of 500 largest US companies, widely used as market benchmark.
+- Dow Jones Industrial Average (DJIA): Price-weighted index of 30 major US companies.
+
+Section 2: Key Financial Metrics
+
+When evaluating a stock, investors look at:
+
+1. Price-to-Earnings (P/E) Ratio
+   - P/E = Share Price / Earnings Per Share (EPS)
+   - A high P/E suggests investors expect high growth.
+   - A low P/E may indicate undervaluation or poor growth prospects.
+   - Average S&P 500 P/E historically: 15-25x.
+
+2. Market Capitalization Categories
+   - Large-cap: >$10 billion (e.g., Apple ~$3 trillion)
+   - Mid-cap: $2B – $10B
+   - Small-cap: $300M – $2B
+   - Micro-cap: <$300M
+
+3. Earnings Per Share (EPS)
+   - EPS = Net Income / Number of Shares Outstanding
+   - Higher EPS generally indicates better profitability.
+
+4. Dividend Yield
+   - Annual Dividend / Share Price × 100
+   - Shows how much cash a company returns to shareholders.
+
+5. 52-Week High/Low
+   - The highest and lowest price of a stock over the past year.
+   - Useful for identifying support/resistance levels.
+
+Section 3: Investment Strategies
+
+Growth Investing:
+- Focuses on companies with strong earnings growth potential.
+- Example companies: Tesla (TSLA), NVIDIA (NVDA), Amazon (AMZN).
+- Higher risk, higher potential reward.
+
+Value Investing:
+- Seeks undervalued stocks trading below their intrinsic value.
+- Made famous by Warren Buffett and Benjamin Graham.
+- Example: Finding a stock with P/E of 10 when industry average is 20.
+
+Index Investing:
+- Investing in broad market indices rather than individual stocks.
+- Lower fees, historically matches or beats most active managers.
+- Popular index funds: Vanguard S&P 500 ETF (VOO), SPDR S&P 500 ETF (SPY).
+
+Dividend Investing:
+- Focuses on companies with consistent dividend payments.
+- Provides steady income stream.
+- Examples: Johnson & Johnson (JNJ), Coca-Cola (KO), Procter & Gamble (PG).
+
+Section 4: Technology Stocks Overview
+
+The technology sector is one of the largest and most influential:
+
+Apple (AAPL):
+- World's most valuable company.
+- Products: iPhone, Mac, iPad, Apple Watch, AirPods.
+- Services revenue growing: App Store, Apple Music, iCloud.
+- Ticker: AAPL on NASDAQ.
+
+Microsoft (MSFT):
+- Second most valuable company globally.
+- Products: Windows, Office 365, Azure cloud, LinkedIn, Xbox.
+- Heavy investment in AI (OpenAI partnership, Copilot).
+- Ticker: MSFT on NASDAQ.
+
+Alphabet / Google (GOOGL):
+- Dominates online advertising (~90% search market share).
+- Products: Google Search, YouTube, Android, Google Cloud.
+- Ticker: GOOGL on NASDAQ.
+
+NVIDIA (NVDA):
+- Leading manufacturer of GPUs.
+- Massive growth driven by AI/ML demand for H100 chips.
+- Data center revenue surpassed gaming revenue.
+- Ticker: NVDA on NASDAQ.
+
+Section 5: Risk Management
+
+- Diversification: Don't put all eggs in one basket. Spread across sectors.
+- Dollar-Cost Averaging: Invest fixed amounts regularly regardless of price.
+- Stop-Loss Orders: Automatically sell if stock drops below a set price.
+- Emergency Fund: Keep 3-6 months of expenses in cash before investing.
+- Position Sizing: No single stock should be more than 5-10% of portfolio.
+
+Section 6: Understanding Stock Data
+
+When looking at a stock quote, you'll typically see:
+
+- Current Price: The last traded price.
+- Open: Price at market open (9:30 AM ET on weekdays).
+- Close/Previous Close: Price at market close (4:00 PM ET).
+- Day High/Low: The highest and lowest prices during today's session.
+- Volume: Number of shares traded today.
+- Average Volume: Typical daily trading volume over 30/90 days.
+- 52-Week High/Low: Highest and lowest price over the past year.
+- Market Cap: Total company value at current price.
+- Dividend Yield: Annual dividends as % of share price.
+
+Markets are CLOSED on weekends and US federal holidays.
+After-hours trading (4 PM – 8 PM ET) has lower volume and wider spreads.
