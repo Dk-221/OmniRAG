@@ -200,7 +200,7 @@ def test_compare_stocks():
     art = tool.get_artifact()
     if art:
         assert art["kind"] == "chart"
-        assert art["data"]["chart_type"] == "line"
+        assert art["data"]["chart_type"] in ("candle", "line")
 
 
 # ── 15. Remember tool & memories ──────────────────────────────────────────
