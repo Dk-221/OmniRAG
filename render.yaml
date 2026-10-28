@@ -19,6 +19,6 @@ services:
       - key: TOKENIZERS_PARALLELISM
         value: "false"
       - key: CORS_ORIGINS
-        value: "https://omnirag.netlify.app,http://localhost:3000"
+        value: '["https://omnirag-pied.vercel.app", "https://omnirag.netlify.app", "http://localhost:3000", "*"]'
       - key: GROQ_API_KEY
         sync: false

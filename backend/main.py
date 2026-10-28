@@ -111,7 +111,13 @@ async def _sse_generator(
         yield f"data: {json.dumps({'type': 'error', 'message': str(exc)})}\n\n"
 
 
-# ── routes: Health & Tools ────────────────────────────────────────────────
+# ── routes: Root, Health & Tools ──────────────────────────────────────────
+@app.get("/")
+async def root() -> JSONResponse:
+    """Root endpoint for Render health checks and discovery."""
+    return JSONResponse({"status": "ok", "app": "OmniRag Agent API", "version": "2.0.0"})
+
+
 @app.get("/api/health")
 async def health() -> JSONResponse:
     """Return server health and key configuration info."""
