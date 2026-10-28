@@ -40,21 +40,33 @@ logger = logging.getLogger(__name__)
 # ── lifespan: startup and cleanup ─────────────────────────────────────────
 @asynccontextmanager
 async def lifespan(app_: FastAPI):
-    """Run startup logic (ingest KB, ensure directories); cleanup on shutdown."""
+    """Run startup logic (ensure directories, background ingest KB); cleanup on shutdown."""
     logger.info("Starting up OmniRag backend…")
     settings.datasets_path.mkdir(parents=True, exist_ok=True)
     settings.knowledge_base_path.mkdir(parents=True, exist_ok=True)
     settings.chroma_path.mkdir(parents=True, exist_ok=True)
 
-    loop = asyncio.get_event_loop()
-    results = await loop.run_in_executor(None, rag.ingest_directory)
-    new_chunks = sum(v for v in results.values() if v > 0)
-    logger.info(
-        "Startup ingest complete. Files processed: %d, new chunks: %d",
-        len(results),
-        new_chunks,
-    )
+    # Ingest in background so Uvicorn binds immediately to $PORT for Render health checks
+    async def _background_ingest():
+        await asyncio.sleep(2)  # Allow port binding to complete first
+        loop = asyncio.get_running_loop()
+        try:
+            results = await loop.run_in_executor(None, rag.ingest_directory)
+            new_chunks = sum(v for v in results.values() if v > 0)
+            logger.info(
+                "Background ingest complete. Files: %d, new chunks: %d",
+                len(results),
+                new_chunks,
+            )
+        except Exception as exc:
+            logger.warning("Background ingest non-fatal error: %s", exc)
+        finally:
+            import gc
+            gc.collect()
+
+    ingest_task = asyncio.create_task(_background_ingest())
     yield
+    ingest_task.cancel()
 
 
 # ── FastAPI app ────────────────────────────────────────────────────────────

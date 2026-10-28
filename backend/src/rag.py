@@ -49,8 +49,13 @@ _mem_collection: Optional[chromadb.Collection] = None
 def _get_embedder() -> SentenceTransformer:
     global _embedder
     if _embedder is None:
-        logger.info("Loading sentence-transformers model: %s", _EMBED_MODEL)
-        _embedder = SentenceTransformer(_EMBED_MODEL)
+        logger.info("Loading sentence-transformers model: %s (CPU mode)", _EMBED_MODEL)
+        try:
+            import torch
+            torch.set_num_threads(1)
+        except Exception:
+            pass
+        _embedder = SentenceTransformer(_EMBED_MODEL, device="cpu")
     return _embedder
 
 
@@ -257,7 +262,9 @@ def ingest_file(path: Path, force: bool = False) -> int:
     if not all_chunks:
         return 0
 
-    embeddings = embedder.encode(all_chunks, show_progress_bar=False).tolist()
+    embeddings = embedder.encode(
+        all_chunks, batch_size=16, show_progress_bar=False
+    ).tolist()
     collection.add(
         ids=all_ids,
         documents=all_chunks,
@@ -283,6 +290,8 @@ def ingest_directory(directory: Optional[Path] = None) -> Dict[str, int]:
             except Exception as exc:  # noqa: BLE001
                 logger.error("Failed to ingest %s: %s", fpath.name, exc)
                 results[fpath.name] = -1
+    import gc
+    gc.collect()
     return results
 
 
