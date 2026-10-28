@@ -20,7 +20,7 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
-from typing import List, Optional
+from typing import Any, List, Optional, Union
 
 from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -58,7 +58,7 @@ class Settings(BaseSettings):
     )
 
     # ── server ────────────────────────────────────────────────────────────
-    cors_origins: List[str] = Field(
+    cors_origins: Union[List[str], str] = Field(
         default=["http://localhost:3000", "http://localhost:5173"],
         alias="CORS_ORIGINS",
     )
@@ -71,13 +71,15 @@ class Settings(BaseSettings):
     router_max_tools: int = Field(default=6, alias="ROUTER_MAX_TOOLS")
 
     # ── validators ────────────────────────────────────────────────────────
-    @field_validator("cors_origins", mode="before")
+    @field_validator("cors_origins", mode="after")
     @classmethod
     def parse_cors_origins(cls, v: object) -> List[str]:
         """Accept a comma-separated string or a list."""
         if isinstance(v, str):
             return [o.strip() for o in v.split(",") if o.strip()]
-        return v  # type: ignore[return-value]
+        if isinstance(v, list):
+            return [str(o).strip() for o in v if str(o).strip()]
+        return ["*"]
 
     @field_validator("chroma_path", "knowledge_base_path", "datasets_path", mode="after")
     @classmethod
